@@ -122,7 +122,6 @@ public class ClassicRpgGui : MonoBehaviour {
 		
 		_usingPositionRect = data.usingPositionRect;
 		_positionRect = data.rect;
-		Debug.Log (_usingPositionRect);
 		_windowCurrentText = string.Empty;
 		_windowTargetText = data.text;
 
@@ -322,6 +321,7 @@ public class ClassicRpgGui : MonoBehaviour {
 		if(_ending){
 			_dialogue = false;
 			_ending = false;
+			Messenger.Broadcast("endDialog");
 		}
 	}
 	#endregion
