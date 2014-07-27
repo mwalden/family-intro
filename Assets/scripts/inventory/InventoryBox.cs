@@ -23,20 +23,16 @@ public class InventoryBox : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.skin = skin;
-		Rect box = new Rect (gameObject.transform.position.x, gameObject.transform.position.y, 50, 50);
+		Rect box = new Rect (gameObject.transform.position.x, gameObject.transform.position.y, width, height);
 		GUI.depth = 30;
 		Debug.Log (GUI.color);
 
-//		GUI.Box (box, string.Empty, skin.GetStyle(border));
 		GUI.depth = 20;
 		GUI.color = new Color (1.0f, 1.0f, 1.0f, 1.0f);
 		if (GUI.Button (box, name, skin.GetStyle (item))) {
 			Messenger<int>.Broadcast("onItemClicked",id);
 		}
-//		GUI.Box (box,string.Empty,);
 		GUI.color = Color.white;
-//		GUI.depth = 10;
-//		GUI.Label (box, name);
 
 	}
 

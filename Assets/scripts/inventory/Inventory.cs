@@ -8,10 +8,9 @@ public class Inventory : MonoBehaviour {
 	public InventoryBox inventoryBox;
 	public List<InventoryBox> items;
 	public GUISkin skin;
-	private int h = 0;
-	private int w = 0;
+
 	private int ix = 55;
-	private int iy = 0;
+
 
 	public int idToRemove = -1;
 	
@@ -19,10 +18,16 @@ public class Inventory : MonoBehaviour {
 	void Start () {
 		items = new List<InventoryBox> ();
 		Messenger<int>.AddListener ("onItemClicked", onItemClicked);
+		Messenger<int,string>.AddListener ("onAddItem", onAddItem);
 	}
 
 	public void onItemClicked(int id){
 		removeItem (id);
+	}
+
+	public void onAddItem(int id,string name){
+		_showInventory = true;
+		addItem (id);
 	}
 
 	public void addItem(int id){
