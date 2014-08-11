@@ -153,10 +153,10 @@ public class ClassicRpgGui : MonoBehaviour {
 		}
 	}
 	#endregion
-	
+
 	#region Old School RPG Dialogue GUI
 	void OnGUI(){
-		
+
 		if(!_showDialogueBox) return;
 		
 		// Set GUI Skin
@@ -344,15 +344,7 @@ public class ClassicRpgGui : MonoBehaviour {
 		}else{
 			_textFrames = 0;
 		}
-		
-		int charsPerInterval = 1;
 
-//		if(_windowCurrentText != _windowTargetText){
-//			for(int i = 0; i<charsPerInterval; i+=1){
-//				if(_windowTargetText.Length <= _windowCurrentText.Length) break;
-//				_windowCurrentText += _windowTargetText[_windowCurrentText.Length];
-//			}
-//		}
 		if (_windowCurrentText != _windowTargetText) {
 			_windowCurrentText += _windowTargetTextArray[0];
 			_windowTargetTextArray.RemoveAt(0);

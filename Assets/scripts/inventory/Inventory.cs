@@ -17,11 +17,11 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		items = new List<InventoryBox> ();
-		Messenger<int>.AddListener ("onItemClicked", onItemClicked);
+		Messenger<int>.AddListener ("onItemInInventoryClicked", onItemInInventoryClicked);
 		Messenger<int,string>.AddListener ("onAddItem", onAddItem);
 	}
 
-	public void onItemClicked(int id){
+	public void onItemInInventoryClicked(int id){
 		removeItem (id);
 	}
 
@@ -72,12 +72,12 @@ public class Inventory : MonoBehaviour {
 			}
 			_showInventory = !_showInventory;
 		}
-		if (Input.GetKeyDown("space")) {
-			addItem (Random.Range(0,1000));
-		}
-		if (Input.GetKeyDown (KeyCode.R)) {
-			removeItem (0);
-		}
+//		if (Input.GetKeyDown("space")) {
+//			addItem (Random.Range(0,1000));
+//		}
+//		if (Input.GetKeyDown (KeyCode.R)) {
+//			removeItem (0);
+//		}
 
 	}
 

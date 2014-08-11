@@ -30,7 +30,7 @@ public class InventoryBox : MonoBehaviour {
 		GUI.depth = 20;
 		GUI.color = new Color (1.0f, 1.0f, 1.0f, 1.0f);
 		if (GUI.Button (box, name, skin.GetStyle (item))) {
-			Messenger<int>.Broadcast("onItemClicked",id);
+			Messenger<int>.Broadcast("onItemInInventoryClicked",id);
 		}
 		GUI.color = Color.white;
 
